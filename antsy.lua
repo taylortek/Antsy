@@ -16,6 +16,13 @@ SMODS.Atlas {
     py = 95
 }
 
+SMODS.Atlas {
+    key = 'antsytarotatlas',
+    path = 'tarotsatlas.png',
+    px = 71,
+    py = 95
+}
+
 -- Register an atlas for decks to use
 SMODS.Atlas {
     key = 'antsybackatlas',

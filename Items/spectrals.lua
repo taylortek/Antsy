@@ -3,7 +3,8 @@
 SMODS.Consumable {
     key = "emf",
     set = "Spectral",
-    pos = {x=0,y=4},
+    atlas = "antsytarotatlas",
+    pos = {x=0,y=0},
     loc_txt = {name="EMF", text={'Destroys 2 random cards,', 'held in hand,', 'applies negative to 3 others.'}},
 
     config = {

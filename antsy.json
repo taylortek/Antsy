@@ -1,0 +1,16 @@
+{
+	"id": "antsy",
+	"name": "Antsy",
+	"display_name": "Antsy",
+	"author": ["Taylor Kerrihard", "William Pazzula"],
+	"description": "A bunch of new jokers, decks, and hand types!",
+	"prefix": "antsy",
+	"main_file": "antsy.lua",
+	"priority": 0,
+	"badge_colour": "F9C8F2",
+	"badge_text_colour": "7c607d",
+	"version": "1.0.0",
+	"dependencies": [
+        "Steamodded (>=1.*)"
+    ]
+}

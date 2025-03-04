@@ -1,0 +1,14 @@
+[manifest]
+version = "1.0.0"
+priority = -1
+
+[[patches]]
+[patches.pattern]
+target = "game.lua"
+pattern = "THIS STRING DOES NOT EXIST"
+position = "at"
+payload = '''
+test
+'''
+match_indent = true
+times = 1

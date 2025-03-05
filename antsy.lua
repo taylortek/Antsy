@@ -111,14 +111,6 @@ Game.main_menu = function(change_context)
     return ret
 end
 
--- There's no world where this is ok
-local old_func = G.draw
-G.draw = function ()
-    local ret = old_func(G)
-    love.graphics.print('Memory actually used (in mb): ' .. string.format("%.5f",collectgarbage('count')/1000), 10,50)
-    return ret
-end
-
 SMODS.current_mod.config_tab = function()
 	return {n = G.UIT.ROOT, config = {
         r = 0.1,

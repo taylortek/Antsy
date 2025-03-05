@@ -1,6 +1,6 @@
 SMODS.Voucher {
     key = "test",
-    loc_txt = {name = "Test Voucher", text = {"testing"}},
+    loc_txt = {name = "Employee Discount", text = {"+1 joker slot for every", "Antsy Joker"}},
     config = {
         extra = {
             antsy_cards = 0,

@@ -111,6 +111,11 @@ Game.main_menu = function(change_context)
     return ret
 end
 
+G.FUNCS.apply_antsy_settings = function(e)
+    menu_injection()
+    SMODS.save_mod_config(config)
+end
+
 SMODS.current_mod.config_tab = function()
 	return {n = G.UIT.ROOT, config = {
         r = 0.1,
@@ -128,9 +133,4 @@ SMODS.current_mod.config_tab = function()
             {n=G.UIT.T, config={text = "*requires restart", scale = 0.2, colour = G.C.UI.TEXT_LIGHT}}
         }},
 	}}
-end
-
-G.FUNCS.apply_antsy_settings = function(e)
-    menu_injection()
-    SMODS.save_mod_config(config)
 end

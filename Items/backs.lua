@@ -10,7 +10,7 @@ SMODS.Back{
         },
     },
     config = {
-        voucher = "v_antsy_test"
+        voucher = "v_antsy_employee_discount"
     },
     apply = function(self)
         G.E_MANAGER:add_event(Event({

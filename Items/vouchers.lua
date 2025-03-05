@@ -12,18 +12,21 @@ SMODS.Voucher {
         local antsy_cards = 0
         -- My best attempt at saving frames, but I'm sure this is still a perfomance hit
         if G.jokers ~= nil then
-        if card.ability.extra.jokers ~= #G.jokers.cards then
-            card.ability.extra.jokers = #G.jokers.cards
-            for _,joker in ipairs(G.jokers.cards) do
-                if is_antsy_item(joker.ability.name) and joker.ability.name ~= "j_antsy_debris" then
-                    antsy_cards = antsy_cards + 1
+            if card.ability.extra.jokers ~= #G.jokers.cards then
+                card.ability.extra.jokers = #G.jokers.cards
+                for _,joker in ipairs(G.jokers.cards) do
+                    if is_antsy_item(joker.ability.name) and joker.ability.name ~= "j_antsy_debris" then
+                        antsy_cards = antsy_cards + 1
+                    end
+                end
+                if antsy_cards ~= card.ability.extra.antsy_cards then
+                    G.jokers.config.card_limit = G.jokers.config.card_limit + (antsy_cards - card.ability.extra.antsy_cards)
+                    card.ability.extra.antsy_cards = antsy_cards
                 end
             end
-            if antsy_cards ~= card.ability.extra.antsy_cards then
-                G.jokers.config.card_limit = G.jokers.config.card_limit + (antsy_cards - card.ability.extra.antsy_cards)
-                card.ability.extra.antsy_cards = antsy_cards
-            end
         end
-    end
-    end
+    end,
+    set_badges = function(self, card, badges)
+        badges[#badges+1] = create_badge("NEEDS ART", G.C.RED, G.C.WHITE, 1 )
+    end,
 }

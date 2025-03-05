@@ -1,6 +1,6 @@
 SMODS.Voucher {
-    key = "employee_discount",
-    loc_txt = {name = "Employee Discount", text = {"+1 joker slot for every", "Antsy Joker"}},
+    key = "season_pass",
+    loc_txt = {name = "Season Pass", text = {"+1 joker slot for every", "Antsy Joker"}},
     config = {
         extra = {
             antsy_cards = 0,

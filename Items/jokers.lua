@@ -17,23 +17,25 @@ SMODS.Joker {
     discovered = true,
     rarity = 1,
     remove_from_deck = function(self, card, from_debuff)
-        G.E_MANAGER:add_event(Event({
-            trigger = 'after',
-            delay = 0.3,
-            blockable = false,
-            func = function()
-                for i = 1, #G.jokers.cards do
-                    G.jokers.cards[i]:start_dissolve()
-                end 
-                for i = 1, G.jokers.config.card_limit do
-                    SMODS.add_card({
-                        set = "Joker",
-                        key = "j_antsy_debris"
-                    })
+        if not from_debuff then
+            G.E_MANAGER:add_event(Event({
+                trigger = 'after',
+                delay = 0.3,
+                blockable = false,
+                func = function()
+                    for i = 1, #G.jokers.cards do
+                        G.jokers.cards[i]:start_dissolve()
+                    end 
+                    for i = 1, G.jokers.config.card_limit do
+                        SMODS.add_card({
+                            set = "Joker",
+                            key = "j_antsy_debris"
+                        })
+                    end
+                    return true
                 end
-                return true
-            end
-        }))
+            }))
+        end
     end,
 
 }

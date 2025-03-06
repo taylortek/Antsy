@@ -437,4 +437,53 @@ SMODS.Joker {
 	end,
 }
 
+-- Split Custody
+SMODS.Joker {
+    key = 'split_custody',
+    atlas = 'antsyjokeratlas',
+    pos = {
+        x = 5,
+        y = 0
+    },
+    config = {
+        extra = {
+            chip_mod = 15,
+            mult_mod = 2,
+            mult = 0,
+            chips = 0,
+        }
+    },
+    blueprint_compat = true,
+    loc_txt = {name='Split Custody', text= { 'If hand is', 'even add {C:mult}+#1#{} Mult to joker,', 'Odd add {C:chips}+#2#{} Chips to joker', '{C:inactive}Currently{} {C:mult}+#3#{} {C:chips}+#4#{}' }},
+    unlocked = true,
+    discovered = true,
+    rarity = 1,
+    cost = 4,
+    calculate = function(self, card, context)
+        if context.joker_main then
+            local sum = 0
+            for _,playing_card in ipairs(context.scoring_hand) do
+                sum = playing_card.base.nominal + sum
+            end
+
+            if sum % 2 == 0 then
+                card.ability.extra.mult = card.ability.extra.mult + card.ability.extra.mult_mod
+            else
+                card.ability.extra.chips = card.ability.extra.chips + card.ability.extra.chip_mod
+            end
+
+            return {
+               mult = card.ability.extra.mult,
+               chips = card.ability.extra.chips,
+            }
+        end
+    end,
+    loc_vars = function(self, info_queue, card)
+		return { vars = {card.ability.extra.mult_mod, card.ability.extra.chip_mod, card.ability.extra.mult, card.ability.extra.chips } }
+	end,
+    set_badges = function(self, card, badges)
+        badges[#badges+1] = create_badge("NEEDS ART", G.C.RED, G.C.WHITE, 1 )
+    end,
+}
+
 print("Antsy jokers loaded...")

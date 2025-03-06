@@ -10,7 +10,7 @@ SMODS.Back{
         },
     },
     config = {
-        voucher = "v_antsy_season_pass"
+        vouchers = {"v_antsy_season_pass", "v_antsy_admission_ticket"}
     },
     apply = function(self)
         G.E_MANAGER:add_event(Event({
@@ -19,6 +19,10 @@ SMODS.Back{
                 SMODS.add_card({
                     set = "Joker",
                     key = "j_antsy_debris"
+                })
+                SMODS.add_card({
+                    set = "Joker",
+                    key = "j_antsy_split_custody"
                 })
                 SMODS.add_card({
                     set = "Joker",

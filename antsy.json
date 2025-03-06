@@ -2,7 +2,7 @@
 	"id": "antsy",
 	"name": "Antsy",
 	"display_name": "Antsy",
-	"author": ["Taylor Kerrihard", "William Pazzula"],
+	"author": ["Taylor Kerrihard", "William Pazzula", "Courtney Nottingham"],
 	"description": "A bunch of new jokers, decks, and hand types!",
 	"prefix": "antsy",
 	"main_file": "antsy.lua",

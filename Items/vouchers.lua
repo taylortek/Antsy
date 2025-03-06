@@ -8,7 +8,7 @@ SMODS.Voucher {
         }
     },
     -- This will check for changes in jokers EVERY FRAME. I don't know how to (or if I even can) fix this!
-    update = function(self, card, context)
+    update = function(self, card, dt)
         local antsy_cards = 0
         -- My best attempt at saving frames, but I'm sure this is still a perfomance hit
         if G.jokers ~= nil then
@@ -25,6 +25,25 @@ SMODS.Voucher {
                 end
             end
         end
+    end,
+    set_badges = function(self, card, badges)
+        badges[#badges+1] = create_badge("NEEDS ART", G.C.RED, G.C.WHITE, 1 )
+    end,
+}
+
+SMODS.Voucher {
+    key = "admission_ticket",
+    loc_txt = {name = "Admission Ticket", text = {"I have no idea..."}},
+    config = {
+        extra = {
+            antsy_cards = 0,
+            jokers = 0
+        }
+    },
+    redeem = function(self, card)
+        G.E_MANAGER:add_event(Event({func = function()
+            print("Admission Ticket Redeemed")
+            return true end }))
     end,
     set_badges = function(self, card, badges)
         badges[#badges+1] = create_badge("NEEDS ART", G.C.RED, G.C.WHITE, 1 )

@@ -454,7 +454,7 @@ SMODS.Joker {
         }
     },
     blueprint_compat = true,
-    loc_txt = {name='Split Custody', text= { 'If hand is', 'even add {C:mult}+#1#{} Mult to joker,', 'Odd add {C:chips}+#2#{} Chips to joker', '{C:inactive}Currently{} {C:mult}+#3#{} {C:chips}+#4#{}' }},
+    loc_txt = {name='Split Custody', text= { 'If hand is', 'even add {C:mult}+#1#{} Mult to joker,', 'odd add {C:chips}+#2#{} Chips to joker', '{C:inactive}Currently{} {C:mult}+#3#{} {C:chips}+#4#{}' }},
     unlocked = true,
     discovered = true,
     rarity = 1,

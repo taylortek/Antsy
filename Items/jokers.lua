@@ -457,7 +457,7 @@ SMODS.Joker {
     loc_txt = {name='Split Custody', text= { 'If hand is', 'even add {C:mult}+#1#{} Mult to joker,', 'odd add {C:chips}+#2#{} Chips to joker', '{C:inactive}Currently{} {C:mult}+#3#{} {C:chips}+#4#{}' }},
     unlocked = true,
     discovered = true,
-    rarity = 1,
+    rarity = 2,
     cost = 4,
     calculate = function(self, card, context)
         if context.joker_main then

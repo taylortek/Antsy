@@ -33,7 +33,7 @@ SMODS.Voucher {
 
 SMODS.Voucher {
     key = "admission_ticket",
-    loc_txt = {name = "Admission Ticket", text = {"I have no idea..."}},
+    loc_txt = {name = "Admission Ticket", text = {"Nothing at the moment"}},
     config = {
         extra = {
             antsy_cards = 0,

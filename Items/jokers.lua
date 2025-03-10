@@ -377,17 +377,29 @@ SMODS.Joker {
         }
     },
     blueprint_compat = true,
-    loc_txt = {name='The Coder', text= { 'Gain every blinds skip', 'tag upon choosing it.' }},
+    loc_txt = {name='The Coder', text= { 'Gain 2 tags upon', 'selecing blind' }},
     unlocked = true,
     discovered = true,
     rarity = 4,
     cost = 4,
     calculate = function(self, card, context)
         if context.setting_blind then
-            if G.GAME.round_resets.blind.name == "Small Blind" then
-                add_tag(Tag(G.GAME.round_resets.blind_tags.Small)) 
-            elseif G.GAME.round_resets.blind.name == "Big Blind" then
-                add_tag(Tag(G.GAME.round_resets.blind_tags.Big))
+            for i=1,2 do
+                local tag_key = get_next_tag_key("the_coder")
+                while tag_key == "tag_boss" do
+                    tag_key = get_next_tag_key("the_coder")
+                end
+                local tag = Tag(tag_key)
+                if tag.name == "Orbital Tag" then
+                    local _poker_hands = {}
+                    for k, v in pairs(G.GAME.hands) do
+                        if v.visible then
+                            _poker_hands[#_poker_hands + 1] = k
+                        end
+                    end
+                    tag.ability.orbital_hand = pseudorandom_element(_poker_hands, pseudoseed("cry_pickle_orbital"))
+                end
+                add_tag(tag)
             end
         end
     end

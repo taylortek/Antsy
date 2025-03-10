@@ -502,7 +502,7 @@ SMODS.Joker {
     config = {
     },
     blueprint_compat = true,
-    loc_txt = {name='The Artist', text= { 'If discarded hand contains', 'only 1 card, add', ' Polychrome to it' }},
+    loc_txt = {name='The Artist', text= { 'If discarded hand contains', 'only 1 card, add', 'Polychrome to it' }},
     unlocked = true,
     discovered = true,
     rarity = 4,

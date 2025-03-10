@@ -384,16 +384,11 @@ SMODS.Joker {
     cost = 4,
     calculate = function(self, card, context)
         if context.setting_blind then
-            G.E_MANAGER:add_event(Event({
-                func = function()
-                    if G.GAME.round_resets.blind.name == "Small Blind" then
-                        add_tag(Tag(G.GAME.round_resets.blind_tags.Small))
-                    elseif G.GAME.round_resets.blind.name == "Big Blind" then
-                        add_tag(Tag(G.GAME.round_resets.blind_tags.Big))
-                    end
-                    return true
-                end
-            }))
+            if G.GAME.round_resets.blind.name == "Small Blind" then
+                add_tag(Tag(G.GAME.round_resets.blind_tags.Small)) 
+            elseif G.GAME.round_resets.blind.name == "Big Blind" then
+                add_tag(Tag(G.GAME.round_resets.blind_tags.Big))
+            end
         end
     end
 }
@@ -442,8 +437,8 @@ SMODS.Joker {
     key = 'split_custody',
     atlas = 'antsyjokeratlas',
     pos = {
-        x = 5,
-        y = 0
+        x = 3,
+        y = 1
     },
     config = {
         extra = {
@@ -480,10 +475,7 @@ SMODS.Joker {
     end,
     loc_vars = function(self, info_queue, card)
 		return { vars = {card.ability.extra.mult_mod, card.ability.extra.chip_mod, card.ability.extra.mult, card.ability.extra.chips } }
-	end,
-    set_badges = function(self, card, badges)
-        badges[#badges+1] = create_badge("NEEDS ART", G.C.RED, G.C.WHITE, 1 )
-    end,
+	end
 }
 
 print("Antsy jokers loaded...")

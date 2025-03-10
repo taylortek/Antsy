@@ -330,7 +330,7 @@ SMODS.Joker {
         }
     },
     blueprint_compat = true,
-    loc_txt = {name='Cowboy', text= { 'Gains {X:mult,C:white}X0.2{} mult', 'for each scored 6. Resets', 'upon beating the Boss Blind.', '{C:inactive}Currently:{} {X:mult,C:white}X#1#{}' }},
+    loc_txt = {name='Cowboy', text= { 'Gains {X:mult,C:white}X0.25{} mult', 'for each scored 6. Resets', 'upon beating the Boss Blind.', '{C:inactive}Currently:{} {X:mult,C:white}X#1#{}' }},
     unlocked = true,
     discovered = true,
     rarity = 2,
@@ -338,7 +338,7 @@ SMODS.Joker {
     calculate = function(self, card, context)
         if context.individual and context.cardarea == G.play then
             if context.other_card:get_id() == 6 then
-                card.ability.extra.mult = card.ability.extra.mult + 0.2
+                card.ability.extra.mult = card.ability.extra.mult + 0.25
             end
         end
         if context.joker_main then

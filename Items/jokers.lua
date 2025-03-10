@@ -244,7 +244,7 @@ SMODS.Joker {
     loc_txt = {name='Detective', text= { '{C:chips}+X{} chips per discarded card.', 'Resets after completing blind', '{C:inactive}Currently:{} {C:chips}+#2#{}' }},
     unlocked = true,
     discovered = true,
-    rarity = 3,
+    rarity = 2,
     cost = 4,
     calculate = function(self, card, context)
         if context.discard and context.cardarea == G.jokers and not context.other_card.debuff then

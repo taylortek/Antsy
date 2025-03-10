@@ -75,6 +75,10 @@ SMODS.Back{
                 })
                 SMODS.add_card({
                     set = "Joker",
+                    key = "j_antsy_the_artist"
+                })
+                SMODS.add_card({
+                    set = "Joker",
                     key = "j_blueprint"
                 })
                 return true

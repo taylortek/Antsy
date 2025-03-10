@@ -372,9 +372,6 @@ SMODS.Joker {
         y = 1
     },
     config = {
-        extra = {
-            mult = 10
-        }
     },
     blueprint_compat = true,
     loc_txt = {name='The Coder', text= { 'Gain 2 tags upon', 'selecing blind' }},
@@ -488,6 +485,35 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
 		return { vars = {card.ability.extra.mult_mod, card.ability.extra.chip_mod, card.ability.extra.mult, card.ability.extra.chips } }
 	end
+}
+
+-- The Artist
+SMODS.Joker {
+    key = 'the_artist',
+    atlas = 'antsyjokeratlas',
+    pos = {
+        x = 4,
+        y = 1
+    },
+    soul_pos = {
+        x = 5,
+        y = 1
+    },
+    config = {
+    },
+    blueprint_compat = true,
+    loc_txt = {name='The Artist', text= { 'If discarded hand contains', 'only 1 card, add', ' Polychrome to it' }},
+    unlocked = true,
+    discovered = true,
+    rarity = 4,
+    cost = 4,
+    calculate = function(self, card, context)
+        if context.discard then
+            if #context.full_hand == 1 then
+                context.full_hand[1]:set_edition({polychrome = true})
+            end
+        end
+    end
 }
 
 print("Antsy jokers loaded...")

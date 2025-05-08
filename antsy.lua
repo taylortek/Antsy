@@ -40,12 +40,12 @@ function is_antsy_item(str)
     end
 end
 
--- This is super jank, but basically it loads all the files from the Items directory and runs them T-T
--- I have no idea how this affects performance vs just having all the code in one file
-local files = NFS.getDirectoryItems(mod_path .. "Items")
-for _,file in ipairs(files) do
-    SMODS.load_file("Items/" .. file)()
-end
+-- These are hardcoded for mobile
+SMODS.load_file("Items/backs.lua")()
+SMODS.load_file("Items/blinds.lua")()
+SMODS.load_file("Items/spectrals.lua")()
+SMODS.load_file("Items/vouchers.lua")()
+SMODS.load_file("Items/jokers.lua")()
 
 -- Create G.GAME.events when starting a run, so there's no errors (I stole this from cryptid, and I don't know what it does)
 local gigo = Game.init_game_object

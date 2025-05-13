@@ -8,6 +8,7 @@ local config = SMODS.current_mod.config
 -- Store mod path (I saw cryptid do it)
 local mod_path = "" .. SMODS.current_mod.path
 
+if config.enable_antsy then
 -- Register an atlas for jokers to use
 SMODS.Atlas {
     key = 'antsyjokeratlas',
@@ -111,8 +112,9 @@ Game.main_menu = function(change_context)
     return ret
 end
 
+end
+
 G.FUNCS.apply_antsy_settings = function(e)
-    menu_injection()
     SMODS.save_mod_config(config)
 end
 
@@ -125,9 +127,10 @@ SMODS.current_mod.config_tab = function()
         padding = 0.2,
         colour = G.C.BLACK
 	}, nodes = {
+        create_toggle({label = '*Enable Antsy', ref_table = config, ref_value = 'enable_antsy'}),
         create_toggle({label = '*Show Antsy title card', ref_table = config, ref_value = 'show_antsy_card'}),
-        create_toggle({label = 'Custom Menu colors', ref_table = config, ref_value = 'custom_menu'}),
-        create_slider({label = 'Vortex Speed', ref_table = config, ref_value = 'vort_speed', decimal_places = 1, w=3, max=2}),
+        create_toggle({label = '*Custom Menu colors', ref_table = config, ref_value = 'custom_menu'}),
+        create_slider({label = '*Vortex Speed', ref_table = config, ref_value = 'vort_speed', decimal_places = 1, w=3, max=2}),
         UIBox_button({label = {'Apply'}, button = "apply_antsy_settings"}),
         {n=G.UIT.R, config={align = "cm", padding = 0}, nodes={
             {n=G.UIT.T, config={text = "*requires restart", scale = 0.2, colour = G.C.UI.TEXT_LIGHT}}

@@ -158,7 +158,7 @@ SMODS.current_mod.extra_tabs = function()
                         {n=G.UIT.T, config={text = "Courtney Nottingham - Ideas & Art", scale = .5, colour = G.C.UI.TEXT_LIGHT}}
                     }},
                     {n=G.UIT.R, config={align = "cm", padding = 0}, nodes={
-                        {n=G.UIT.T, config={text = "Sebastion Kaylie - Playtesting", scale = .5, colour = G.C.UI.TEXT_LIGHT}}
+                        {n=G.UIT.T, config={text = "Sebastion Kaylie - Ideas", scale = .5, colour = G.C.UI.TEXT_LIGHT}}
                     }},
 				}}
 			end,

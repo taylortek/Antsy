@@ -116,6 +116,10 @@ G.FUNCS.apply_antsy_settings = function(e)
     SMODS.save_mod_config(config)
 end
 
+G.FUNCS.open_antsy_github = function(e)
+    love.system.openURL("https://github.com/taylortek/Antsy/tree/Mobile")
+end
+
 SMODS.current_mod.config_tab = function()
 	return {n = G.UIT.ROOT, config = {
         r = 0.1,
@@ -160,6 +164,7 @@ SMODS.current_mod.extra_tabs = function()
                     {n=G.UIT.R, config={align = "cm", padding = 0}, nodes={
                         {n=G.UIT.T, config={text = "Sebastion Kaylie - Ideas", scale = .5, colour = G.C.UI.TEXT_LIGHT}}
                     }},
+                    UIBox_button({label = {'Github'}, button = "open_antsy_github"}),
 				}}
 			end,
         },

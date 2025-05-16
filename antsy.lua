@@ -137,3 +137,34 @@ SMODS.current_mod.config_tab = function()
         }},
 	}}
 end
+
+SMODS.current_mod.extra_tabs = function()
+    return {
+        {
+            label = "Credits",
+            tab_definition_function = function()
+				return {n = G.UIT.ROOT, config = {
+                    r = 0.1,
+                    minw = 5,
+                    minh = 5,
+                    align = "cm",
+                    padding = 0.2,
+                    colour = G.C.BLACK
+				}, nodes = {
+                    {n=G.UIT.R, config={align = "cm", padding = 0}, nodes={
+                        {n=G.UIT.T, config={text = "Taylor Kerrihard - Ideas & Programming", scale = .5, colour = G.C.UI.TEXT_LIGHT}}
+                    }},
+                    {n=G.UIT.R, config={align = "cm", padding = 0}, nodes={
+                        {n=G.UIT.T, config={text = "William Pazzula - Ideas & Art", scale = .5, colour = G.C.UI.TEXT_LIGHT}}
+                    }},
+                    {n=G.UIT.R, config={align = "cm", padding = 0}, nodes={
+                        {n=G.UIT.T, config={text = "Courtney Nottingham - Ideas & Art", scale = .5, colour = G.C.UI.TEXT_LIGHT}}
+                    }},
+                    {n=G.UIT.R, config={align = "cm", padding = 0}, nodes={
+                        {n=G.UIT.T, config={text = "Sebastion Kaylie - Playtesting", scale = .5, colour = G.C.UI.TEXT_LIGHT}}
+                    }},
+				}}
+			end,
+        },
+    }
+end
